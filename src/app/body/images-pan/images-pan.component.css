@@ -1,0 +1,28 @@
+
+
+.forimages{
+  width: 100%;
+  padding: 1%;
+  height: 95%;
+  /*background-color: #dddddd;*/
+  position:relative;
+  float:left;
+  overflow-y: scroll;
+}
+
+.imageTile{
+}
+
+.loading-text{
+  color: white;
+}
+
+.image{
+  opacity: 2;
+  display: inline-block;
+  overflow-y: scroll;
+  width: 100%;
+  height: auto;
+  padding: 1%;
+}
+

@@ -1,0 +1,23 @@
+.appHome{
+  width: 100%;
+  height: 100vh;
+  background: url(
+  https://wallpaperplay.com/walls/full/e/c/0/91325.jpg#.Xdir18NscZY.link
+  ) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.appHeader{
+  position:absolute;
+  top:0;
+  height: 10vh;
+  width:100%;
+}
+
+
+.appBody{
+  height: 90vh;
+  width:100%;
+  position:absolute;;
+  bottom: 0;
+}

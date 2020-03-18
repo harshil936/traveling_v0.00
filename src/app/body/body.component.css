@@ -1,0 +1,20 @@
+.mainBody{
+  height:100%;
+  width: 100%;
+  padding: 10px;
+  display: block;
+  margin-top: 1%;
+}
+
+app-images-pan{
+  width: 35%;
+  height:100%;
+  float:left;
+}
+
+app-gmaps{
+  width: 63%;
+  right: 0;
+  height:100%;
+  float: right;
+}

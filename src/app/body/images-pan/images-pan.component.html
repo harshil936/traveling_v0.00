@@ -1,0 +1,14 @@
+<div class = "forimages">
+
+  <span *ngIf="!ready" class="loading-text">
+    <h3>Loading...</h3>
+  </span>
+
+  <div>
+    <div *ngFor="let imageData of imageFiles" class="imageTile" >
+      <img src= {{imageData.imageURL}} class = "image" (click)="updateMap(imageData.imageID)">
+    </div>
+  </div>
+</div>
+
+

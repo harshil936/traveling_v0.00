@@ -1,0 +1,26 @@
+<div class="divHeader">
+
+  <nav class="navHeader">
+
+    <div class="logoDiv">
+      <p class="logo">Travel GO</p>
+    </div>
+
+    <div class="menu">
+      <div class="searchbar form-control">
+        <input class="input-text" type="text" id="inputText" placeholder="Search Places	" [(ngModel)]="searchTerm" (keyup.enter)="keywordSearch()">
+        <span class="verticalLine">&#124;</span>
+        <button class="searchButton" id = "search-icon-button" (click)="keywordSearch()"><i class="fa fa-search"></i>
+        </button>
+      </div>
+      <div class="navigations">
+        <button class="navItems">Home</button>
+        <button class="navItems">Sign Up</button>
+        <button class="navItems">Account</button>
+        <button class="navItems"> Profile </button>
+      </div>
+
+    </div>
+  </nav>
+</div>
+
