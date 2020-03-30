@@ -15,7 +15,11 @@ import {HttpService} from './core/services/http.service';
 import {HttpInterceptorService} from 'ng-http-interceptor';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {routing} from './travelapp.routes';
+import { AccountsPageComponent } from './accounts-page/accounts-page.component';
+import { SignUpComponentComponent } from './accounts-page/sign-up-component/sign-up-component.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
@@ -23,10 +27,12 @@ import {FormsModule} from '@angular/forms';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    routing,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDn4jqzL9yIoLdGSO_nPNRwCd4XJkQurUI'
     }),
     FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     AppComponent,
@@ -35,6 +41,8 @@ import {FormsModule} from '@angular/forms';
     BodyComponent,
     ImagesPanComponent,
     GoogleMapsComponent,
+    AccountsPageComponent,
+    SignUpComponentComponent,
 
   ],
   providers: [

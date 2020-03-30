@@ -1,0 +1,363 @@
+/* font sizes */
+@normal-font-size: 1rem;
+@small-font-size: 0.875rem;
+
+/* various component sizes */
+@header-bar-height: 50px;
+@order-progress-bar-height: 45px;
+@footer-height: 43px;
+@mobile-footer-height: 48px;
+@mobile-footer-with-progress-height: 67px;
+@mobile-reach-map-height: 260px;
+
+/* Bootstrap breakpoints */
+@small-breakpoint: 576px;
+@medium-breakpoint: 767px;
+
+/* specific component breakpoints */
+@hide-order-progress-bar-breakpoint: 576px;
+
+:root {
+  /* theme colors */
+  --theme-dark-color: #003057;
+  --theme-dark-color-faded: rgba(27, 81, 131, 0.7);
+  --theme-light-color: #0077bc;
+  --theme-light-color-faded: #cfe6f2;
+  --theme-extra-light-color: #0099d5;
+  --theme-grey-color: #808285;
+  --theme-dark-grey-color: #404040;
+  --theme-new-color: #319f00;
+  --theme-red-color: #cc0000;
+  --theme-text-color: #404040;
+  --off-white: #f7f7f7;
+  --white: #ffffff;
+
+  /* colors by component */
+  --button-disabled-color: #d9d9d9;
+  --card-background-color: white;
+  --creative-drawer-header-color: #002857;
+  --divider-color: #d9d9d9;
+  --error-color: var(--theme-red-color);
+  --header-bar-color: #003154;
+  --header-bar-text-color: white;
+  --header-bar-color-mobile: white;
+  --header-bar-text-color-mobile: #003154;
+  --header-bar-border-bottom: none;
+  --header-bar-account-menu-margin-left: 0;
+  --dashboard-background: inherit;
+  --dashboard-tabs-color: var(--theme-dark-color);
+  --dashboard-search-placeholder-color: #506880;
+  --dashboard-search-text-color: rgba(0, 0, 0, 0.87);
+  --dashboard-search-background-color: transparent;
+  --dashboard-search-bottom-border: 1px solid var(--white);
+  --dashboard-search-focus-bottom-border: 1px solid var(--theme-light-color);
+  --dashboard-search-focus-box-shadow: 0 1px 0 0 var(--theme-light-color);
+  //--download-icon:/assets/creative-assets/ic_file_download_blue.svg;
+  //--file-icon:/assets/creative-assets/ic_insert_drive_file_blue.svg;
+  --login-signup-reset-background: url("../../assets/login_signup_bg.jpg") left -1px no-repeat fixed;
+  //--logo-login:/assets/tv-commercial-portal/images/spectrum_logo_blue.svg;
+  //--logo-desktop:/assets/spp/Spectrum_Reach_Rev_RGB.png;
+  //--logo-mobile:/assets/spp/spectrumreach_blue.svg;
+  --navbar-color: var(--white);
+  --page-background-color: var(--off-white);
+  --site-title:SPP - Creative Requests;
+  --tenant-display-name:Spectrum Reach;
+  --text-color: var(--theme-dark-grey-color);
+  --tip-checkmark-icons-color: #009E8C;
+  //--upload-cloud-icon:/assets/tv-commercial-portal/images/upload-cloud-blue.png;
+  //--upload-image-video-hover-background: url("/assets/tv-commercial-portal/images/upload-blue.png");
+  //--upload-image-video-add-hover-background: url("/assets/tv-commercial-portal/images/add-blue.png");
+  //--video-library-icon:/assets/creative-assets/ic_video_library_blue.svg;
+
+  ///* CPP-specific components */
+  //--cpp-dashboard-review-button-background: #f6a300;
+  //--cpp-goals-labels-width: 65%;
+  //--cpp-goals-tooltip-link: <a id='learn-more-link' style='color: #fff; cursor: pointer; text-decoration: underline;'>Learn More</a></span>;
+  //--cpp-voiceover-icon:/assets/spp/review/VoiceOver.svg;
+  //--cpp-music-icon:/assets/spp/review/Music.svg;
+  //--cpp-script-icon:/assets/spp/review/Script.svg;
+  //--cpp-goals-icons-path:/assets/spp/goals/;
+  //--cpp-goals-icons-extension:svg;
+  //--cpp-header-email-icon:assets/tv-commercial-portal/images/EmailIcon.svg;
+  //--spp-header-phone-icon:assets/tv-commercial-portal/images/PhoneIcon.svg;
+  //--spp-header-phone:866-583-2028;
+  //--cpp-header-email:help.creativeportal@charter.com;
+
+}
+
+.link {
+  color: var(--theme-light-color) !important;  // overwrites Bootstrap global interference
+  text-decoration: underline !important; // overwrites Bootstrap global interference
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+a:not([href]):not([tabindex]).normal-color {
+  color: var(--theme-text-color);
+}
+
+a:not([href]):not([tabindex]).error-color {
+  color: var(--error-color);
+}
+
+.small-text {
+  font-size: @small-font-size;
+  line-height: 1.42;
+}
+
+small {
+  .small-text();
+}
+
+/* namespaced mixins for use in both class & element selectors */
+#header {
+  .large {
+    #header-helper.header();
+    font-size: 1.75rem;
+    line-height: 0.9333333;
+    @media only screen and (max-width: @small-breakpoint) {
+      font-size: 1.875rem;
+      line-height: 1.133333;
+    }
+  }
+  .medium {
+    #header-helper.header();
+    font-size: 1.25rem;
+  }
+  .small {
+    #header-helper.header();
+    font-size: 1.125rem;
+  }
+  .x-small {
+    #header-helper.header();
+    font-size: @normal-font-size;
+  }
+}
+#header-helper() {
+  .header {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--theme-dark-color);
+    margin: 0;
+  }
+  .thin {
+    font-weight: 300;
+  }
+  .thick {
+    font-weight: 700;
+  }
+}
+
+/* class header selectors */
+.header {
+  &.large {
+    #header.large();
+  }
+  &.medium { #header.medium(); }
+  &.small { #header.small(); }
+  &.x-small { #header.x-small(); }
+  &.thin { #header-helper.thin(); }
+  &.thick { #header-helper.thick(); }
+}
+
+/* element header selectors */
+h1 { #header.large(); }
+h2 { #header.medium(); }
+h3 { #header.small(); }
+h4 { #header.x-small(); }
+h1, h2, h3, h4 {
+  &.thin { #header-helper.thin(); }
+  &.thick { #header-helper.thick(); }
+}
+
+.step {
+  font-size: 0.875rem;
+  line-height: 1.71428751;
+  text-transform: uppercase;
+  color: var(--theme-grey-color);
+  &.active {
+    color: var(--theme-light-color);
+  }
+  &.complete {
+    color: var(--theme-dark-color);
+  }
+}
+
+.big-number {
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 0.93;
+  color: var(--theme-dark-color);
+  &.thin {
+    font-weight: 600;
+  }
+}
+
+.field-placeholder {
+  color: var(--theme-text-color);
+  font-size: @small-font-size;
+  line-height: 1;
+}
+
+.spp-btn-common() {
+  background-color: var(--theme-light-color);
+  color: white;
+  line-height: normal;
+  text-transform: capitalize;
+  white-space: nowrap;
+  border: none;
+  box-shadow: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  //.unselectable();
+  &:hover, &:focus {
+    background-color: var(--theme-dark-color);
+  }
+  &[disabled], &.disabled, &.disable {
+    background-color: var(--theme-grey-color);
+    pointer-events: none;
+    cursor: default;
+  }
+  &.secondary {
+    background-color: var(--theme-grey-color);
+    &:hover {
+      background-color: var(--theme-text-color);
+    }
+  }
+}
+.spp-btn, .cpp-btn, .spp-btn-small, .cpp-btn-small {
+  font-size: @normal-font-size;
+  font-weight: normal;
+  height: 2.1875rem;
+  padding: 0.5rem 1.0625rem;
+  min-width: 6.0625rem;
+  text-align: center;
+  .spp-btn-common();
+}
+
+.spp-btn-large, .cpp-btn-large {
+  font-size: @normal-font-size;
+  font-weight: 200;
+  letter-spacing: 0.5px; // may want to remove this
+  height: 2.625rem;
+  padding: 0 1.5625rem;
+  .spp-btn-common();
+}
+
+.ap-btn-large {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--theme-light-color);
+  font-size: 1rem;
+  line-height: normal;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  &:focus { background-color: var(--theme-light-color) }
+  .unselectable();
+  &:hover, &:focus {
+    background-color: var(--theme-dark-color);
+  }
+  &:disabled {
+    background-color: var(--button-disabled-color);
+    color: var(--theme-text-color);
+  }
+  &.no-color {
+    color: var(--theme-text-color);
+    background-color: transparent;
+    border-color: var(--theme-grey-color);
+    &:focus { background-color: transparent }
+  }
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+hr, .overlay hr {
+  border-color: var(--divider-color);
+  margin: 24px 0;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input-placeholder(@color, @font-size: 1rem, @line-height: normal) {
+  ::-webkit-input-placeholder { color: @color; font-size: @font-size !important; line-height: @line-height !important; vertical-align: middle; }
+  ::-moz-placeholder { color: @color; font-size: @font-size !important; line-height: @line-height !important; vertical-align: middle; }
+  :-ms-input-placeholder { color: @color; font-size: @font-size !important; line-height: @line-height !important; vertical-align: middle; }
+  :-moz-placeholder { color: @color; font-size: @font-size !important; line-height: @line-height !important; vertical-align: middle; }
+}
+
+// This will limit the text inside of an element to the specified number of lines.
+#limit-text-lines(@num-lines, @text-overflow: ellipsis) {
+  display: -webkit-box;
+  -webkit-line-clamp: @num-lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: @text-overflow;
+}
+
+// hide single-pixel tracking images
+img[height="1"][width="1"] {
+  display: none;
+}
+
+.mat-expansion-panel .mat-expansion-header .mat-expansion-indicator, .mat-expansion-indicator::after {
+  color: var(--theme-light-color) !important;
+}
+
+.tip-icon {
+  width: 30px;
+  font-size: 15px;
+  color: var(--theme-light-color);
+}
+
+.ng-select .ng-arrow-wrapper .ng-arrow {
+  height: 10px !important;
+  width: 13px !important;
+  color: initial;
+  right: 13px;
+  top: 0px;
+  border: none;
+}
+
+.ng-select span.ng-arrow-wrapper:before {
+  content: "\f107";
+  display: inline-block;
+  color: var(--theme-light-color);
+  font-family: FontAwesome;
+  font-size: 23px;
+  font-weight: 600;
+  position: relative;
+  top: 13px;
+  right: 5px;
+}
+
+#creative-new-voice-music .ng-select span.ng-arrow-wrapper:before {
+  top: 18px;
+}
+
+.ng-select.ng-select-opened span.ng-arrow-wrapper:before {
+  content: "\f106";
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+  border-color: var(--theme-light-color);
+}
+
+[type="checkbox"].filled-in:checked + label:before {
+  top: 2px;
+}

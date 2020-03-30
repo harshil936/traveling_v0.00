@@ -1,0 +1,89 @@
+<app-accounts-page>
+<div class="dark-color-overlay"></div>
+<div class="main-content">
+    <div class="div-header">
+        <h1>Let's Get You Started</h1>
+    </div>
+    <hr/>
+    <div class = "signup-form">
+        <form *ngIf="signUpForm" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+            <div class="field-rows">
+                <label for="firstName">First Name*</label>
+                <input
+                        name="firstName"
+                        type="text"
+                        id="firstName"
+                        formControlName="firstName"
+                        pattern="^[A-Za-z,.-][A-Za-z ',.-]*$"
+                        placeholder= "Enter First Name"
+                        [class.alert-invalid-input]="firstName.touched && firstName.invalid" />
+            </div>
+            <hr/>
+            <div class="field-rows">
+                <label for="lastName">Last Name*</label>
+                <input
+                        name="lastName"
+                        type="text"
+                        id="lastName"
+                        formControlName="lastName"
+                        placeholder="Enter Last Name"
+                        pattern="^[A-Za-z,.-][A-Za-z ',.-]*$"
+                        [class.alert-invalid-input]="lastName.touched && lastName.invalid" />
+            </div>
+            <hr/>
+            <div class="field-rows">
+                <label for="email"> Email* </label>
+                <input name="email" type="email" id="email" formControlName="email"
+                       placeholder="Enter Email"
+                       [class.alert-invalid-input]="email.touched && email.invalid">
+            </div>
+            <hr/>
+            <div class="field-rows">
+                <label for="password"> Password* </label>
+                <input
+                        name="password" id="password" formControlName="password"
+                        placeholder="Enter New Password"
+                        [type]="'text'"
+                        [class.alert-invalid-input]="(password.touched && confirmPassword.touched && signUpForm.controls.passwordGroup.errors?.doesMatchPassword) || (password.touched && password.invalid)">
+            </div>
+            <hr/>
+            <div class="field-rows">
+                <label for="confirm-password">Confirm Password* </label>
+                <input name="confirm-password" id="confirm-password" formControlName="confirmPassword"
+                       placeholder="Re-Enter Password"
+                       [type]="'text'"
+                       [class.alert-invalid-input]="(password.touched && confirmPassword.touched && signUpForm.controls.passwordGroup.errors?.doesMatchPassword) || (confirmPassword.touched && confirmPassword.invalid)">
+            </div>
+            <hr/>
+            <div class="field-rows-likes" >
+                <label for="likes" >Tell us what you like </label>
+                <textarea name="likes" id="likes"
+                          formControlName="likes"
+                          placeholder="Mountains, nature, art, ..."
+                          [class.alert-invalid-input]="(password.touched && likes.touched && signUpForm.controls.passwordGroup.errors?.doesMatchPassword) || (likes.touched && likes.invalid)"> </textarea>
+            </div>
+            <hr/>
+            <div class="field-rows" style="justify-content: center">
+                <button class="ap-btn-large " [disabled]="!signUpForm.valid" type="submit">
+                    Next Step
+                </button>
+            </div>
+
+            <div style="justify-content: center">
+                <p>By moving further you agreeing with all the <a> terms and conditions</a></p>
+            </div>
+        </form>
+    </div>
+
+    <hr/>
+
+    <div class="footer-text">
+       <h1> Pickup Where You Left
+        <a [routerLink]="['/login']">Login</a>
+       </h1>
+    </div>
+
+</div>
+
+</app-accounts-page>

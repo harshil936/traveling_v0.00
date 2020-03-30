@@ -5,6 +5,7 @@ import {ToServerUrlService} from '../core/services/toServer.url.service';
 import {catchError, map} from 'rxjs/operators';
 import {HttpService} from '../core/services/http.service';
 import {ImagesPanService} from '../core/services/images-pan.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private dataServices: DataCallService,
     private imagesPanServices: ImagesPanService,
+    private router: Router,
   ) {}
 
   ngOnInit() {}
@@ -27,6 +29,10 @@ export class HeaderComponent implements OnInit {
         this.imagesPanServices.setSearchedImagesObject(response.data);
       }
     );
+  }
+
+  goToSignUp() {
+    this.router.navigate(['sign-up']);
   }
 
 }
