@@ -16,6 +16,8 @@
   display: flex;
   flex-direction: row;
   height: inherit;
+  background-color: transparent;
+  align-items: center;
 }
 
 .logoDiv{
@@ -35,19 +37,19 @@
   font-family: Impact, Charcoal, sans-serif;
   position: absolute;
   left: 75px;
-  top: 20px;
+  top: 10px;
 }
 
 
-.menu{
+.menu {
   width:64%;
   align-items: center;
 }
 
-.searchbar{
+.searchbar {
   float:left;
   width: 40%;
-  height: 3em;
+  height: 40px;
   color: white;
   background-color: rgba(126,173,195,0.96);
   border: 2px solid white;
@@ -55,10 +57,10 @@
   font-size: 14px;
   font-family: Impact, Charcoal, sans-serif;
   letter-spacing: 1px;
-  margin-top: 25px;
   display: flex;
   flex: 1 1 auto;
   justify-content: space-between;
+  padding: 0 15px
 }
 
 
@@ -66,11 +68,17 @@
   float:left;
   background-color: transparent; /* Fallback for older browsers without RGBA-support */
   width: 88%;
-  height: 100%;
+  height: 100% !important;
   border: none;
-  padding: 6px;
+  //padding: 6px;
   margin-top: 0;
   outline:none;
+}
+
+input {
+  border: 0;
+  background-color: transparent !important;
+  height: inherit;
 }
 
 .searchButton{
@@ -83,7 +91,7 @@
 }
 
 .verticalLine{
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .fa fa-search{
@@ -107,17 +115,15 @@
   color: rgba(40, 242, 255, 0.96);
   border: none;
 }
-
 .navigations{
   width: 60%;
   float: right;
   display: flex;
   flex-direction: row;
   margin: 0;
+  height: 25px;
   justify-content: flex-end;
-  padding-top: 35px;
-  padding-right: 20px;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .navItems{
@@ -180,8 +186,13 @@
 
   .input-text {
     width: 84%;
+    height: 100% !important;
   }
-
+  input {
+    border: 0;
+    background-color: transparent !important;
+    height: inherit;
+  }
   .menu{
     height: 120px;
     display: flex;
@@ -235,7 +246,7 @@
   }
   .menu{
     height: 90px;
-    width: 20%;
+    width: 25%;
     color: white;
   }
   .logo{
@@ -245,9 +256,9 @@
   }
   .show-menu {
     position: absolute;
-    right: 34px;
-    top:40px;
-    font-size: large;
+    right: 42px;
+    top: 12px;
+    font-size: 40px;
   }
   #overlay{
     position: fixed; /* Sit on top of the page content */
