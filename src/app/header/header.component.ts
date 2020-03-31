@@ -10,11 +10,12 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.less']
 })
 export class HeaderComponent implements OnInit {
 
   searchTerm = '';
+  showMobileUI = true;
   constructor(
     private dataServices: DataCallService,
     private imagesPanServices: ImagesPanService,
@@ -23,7 +24,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {}
 
-  keywordSearch(){
+  keywordSearch() {
     this.dataServices.getSearchedImages(this.searchTerm).subscribe(
       response => {
         this.imagesPanServices.setSearchedImagesObject(response.data);
@@ -35,4 +36,11 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['sign-up']);
   }
 
+  showMenu() {
+    document.getElementById('overlay').style.display = 'block';
+  }
+
+  hideMenu() {
+    document.getElementById('overlay').style.display = 'none';
+  }
 }

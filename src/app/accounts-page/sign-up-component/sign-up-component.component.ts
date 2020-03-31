@@ -33,6 +33,10 @@ export class SignUpComponentComponent implements OnInit {
     });
   }
 
+  goToHome() {
+    this.router.navigate(['home']);
+  }
+
   get signUpFormControls() { return this.signUpForm.controls; }
 
   onSubmit() {}
@@ -48,4 +52,5 @@ export class SignUpComponentComponent implements OnInit {
   // get terms() { return this.signUpForm.get('accountForm.isTermAccepted') as FormControl; }
   // get zipCode() { return this.signUpForm.get('accountForm.zipCode') as FormControl; }
   // get businessPhone() { return this.signUpForm.get('accountForm.businessPhone') as FormControl; }
+
 }

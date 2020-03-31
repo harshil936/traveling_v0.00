@@ -19,8 +19,38 @@
         <button class="navItems">Account</button>
         <button class="navItems"> Profile </button>
       </div>
-
     </div>
   </nav>
+
 </div>
 
+<div class="divHeader-mobile">
+
+  <nav class="navHeader">
+
+    <div class="mobile-menu">
+      <div class="logoDiv">
+        <p class="logo">Travel GO</p>
+      </div>
+
+      <div class="menu">
+        <div class="show-menu" (click)="showMenu()">menu</div>
+        <div id="overlay">
+          <div class="navigations">
+            <button class="navItems">Home</button>
+            <button class="navItems" (click)="goToSignUp()">Sign Up</button>
+            <button class="navItems">Account</button>
+            <button class="navItems"> Profile </button>
+            <button class="navItems" (click)="hideMenu()" > Back </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="searchbar">
+      <input class="input-text" type="text"  placeholder="Search Places	" [(ngModel)]="searchTerm" (keyup.enter)="keywordSearch()">
+      <button class="searchButton"  (click)="keywordSearch()"><i class="fa fa-search"></i></button>
+    </div>
+  </nav>
+
+</div>

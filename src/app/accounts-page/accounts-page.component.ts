@@ -90,7 +90,7 @@ export class AccountsPageComponent implements OnInit, AfterContentInit, OnDestro
       this.signUpErrorMessageSubs.unsubscribe();
     }
     // this.removeMarketingScript();
-    this.responsiveSubscription.unsubscribe();
+    // this.responsiveSubscription.unsubscribe();
   }
 
   navigateToTermsAndCondition(evt) {
