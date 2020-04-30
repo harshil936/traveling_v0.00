@@ -26,7 +26,7 @@
     "ng-http-interceptor": "^4.0.0",
     "breeze-bridge-angular": "^4.0.2",
     "breeze-client": "^2.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
     "tslib": "^1.10.0",
